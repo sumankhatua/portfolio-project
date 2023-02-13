@@ -18,8 +18,10 @@ from django.urls import path
 # For image url path
 from django.conf import settings
 from django.conf.urls.static import static
+# Importing views
+import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', jobs.views.home),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # used to save media shown in url in root path
- 
